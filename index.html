@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panadería JAISAAC | Tradición desde 2006</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- VARIABLES DE DISEÑO --- */
+        :root {
+            --cafe-oscuro: #2b1d12;
+            --dorado: #d4a373;
+            --crema: #fefae0;
+            --blanco: #ffffff;
+            --shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        /* --- RESET Y BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--crema);
+            color: var(--cafe-oscuro);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(43, 29, 18, 0.7), rgba(43, 29, 18, 0.7)), 
+                        url('Imagenes/WhatsApp Image 2026-03-30 at 6.02.58 PM.jpeg'); /* Foto de fondo */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--blanco);
+            padding: 20px;
+        }
+
+        .logo-container img {
+            width: 220px;
+            border-radius: 50%;
+            border: 4px solid var(--dorado);
+            margin-bottom: 20px;
+            animation: fadeInDown 1.2s ease;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--dorado);
+            margin-bottom: 30px;
+        }
+
+        /* --- BOTÓN WHATSAPP --- */
+        .btn-ws {
+            background-color: #25d366;
+            color: white;
+            padding: 18px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-ws:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
+            background-color: #1eb956;
+        }
+
+        /* --- GALERÍA GRID --- */
+        .gallery-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: var(--dorado);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .grid-panes {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--blanco);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--cafe-oscuro);
+        }
+
+        /* --- FOOTER (CONTACTO) --- */
+        footer {
+            background: var(--cafe-oscuro);
+            color: var(--blanco);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 20px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* --- ANIMACIONES --- */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="Imagenes/logo.png" alt="Logo Jaisaac">
+        </div>
+        <p class="subtitle">Desde 2006</p>
+        <h1>Panadería JAISAAC</h1>
+        <p style="margin-bottom: 40px; font-style: italic;">Horneando momentos inolvidables con manos artesanas.</p>
+        <a href="https://wa.me/584122448905" class="btn-ws">
+            Pedir por WhatsApp ahora
+        </a>
+    </header>
+
+    <section class="gallery-section">
+        <h2 class="section-title">Nuestra Hornada del Día</h2>
+        <div class="grid-panes">
+            
+            <div class="card">
+                <img src="Imagenes/WhatsApp Image 2026-03-30 at 6.03.00 PM (2).jpeg" alt="Pan de queso">
+                <div class="card-body"><h3>Pan de Queso</h3></div>
+            </div>
+
+            <div class="card">
+                <img src="Imagenes/WhatsApp Image 2026-03-30 at 6.03.00 PM.jpeg" alt="Pan trenzado">
+                <div class="card-body"><h3>Pan de Tunja</h3></div>
+            </div>
+
+            <div class="card">
+                <img src="Imagenes/WhatsApp Image 2026-03-30 at 6.03.00 PM (4).jpeg" alt="Pan sobado">
+                <div class="card-body"><h3>Pan de Banquete</h3></div>
+            </div>
+
+            <div class="card">
+                <img src="Imagenes/WhatsApp Image 2026-03-30 at 6.02.59 PM.jpeg" alt="Pan de Guayaba">
+                <div class="card-body"><h3>Pan de Guayaba</h3></div>
+            </div>
+
+            <div class="card">
+                <img src="Imagenes/WhatsApp Image 2026-03-30 at 6.02.59 PM (1).jpeg" alt="Pan de Guayaba">
+                <div class="card-body"><h3>Pan Francés</h3></div>
+            </div>
+
+            <div class="card">
+                <img src="Imagenes/WhatsApp Image 2026-03-30 at 6.03.01 PM (3).jpeg" alt="Pan de Guayaba">
+                <div class="card-body"><h3>Pan Campesino</h3></div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="contact-box">
+            <h2 style="font-family: 'Playfair Display'; margin-bottom: 20px;">¿Hambre de buen pan?</h2>
+            <p>📞 <strong>Atención directa:</strong> 0412-2448905</p>
+            <p>📍 <strong>Visítanos:</strong> Caribe 2, Edo Lara, Venezuela</p>
+            <p style="margin-top: 20px; color: var(--dorado);">¡Te esperamos con el horno caliente!</p>
+        </div>
+    </footer>
+
+</body>
+</html>
